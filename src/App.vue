@@ -23,7 +23,9 @@ export default {
 </script>
 
 <style scoped>
-.main{
+@import url('https://fonts.googleapis.com/css2?family=Rock+3D&display=swap');
+*{
+  font-family: 'Rock 3D', cursive;
   background-color: #EBA6A9;
 }
 </style>
