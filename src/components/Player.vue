@@ -15,6 +15,7 @@
           </div>
         </div>
       </div>
+      <div>Best viewed on desktop.</div>
     </div>
   </div>
 </template>
