@@ -1,4 +1,13 @@
-# player
+# Audio Player
+
+A simple audio player built in vuejs by Chris Evens.
+
+Demo:
+https://audioplayer-5f7f0.web.app/
+
+The visualizer is drawn on an html canvas with it's
+values calculated from the byte frequency data of the
+song being played.
 
 ## Project setup
 ```
