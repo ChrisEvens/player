@@ -1,11 +1,19 @@
 <template>
   <div class="player">
-    <audio ref="source" crossorigin="anonymous" src="~@/assets/Jamie_xx_Gosh.mp3" v-on:ended="pause" v-on:loadedmetadata="begin"></audio>
-    <div class="audio-wrapper">
-      <canvas ref="myCanvas" v-on:mousedown="mousedown" v-on:mouseup="mouseup" width="500" height="500"></canvas>
-      <div class="controls">
-        <v-btn v-if="paused" :disabled="!ready" fab x-large color="#C4A29E" v-on:click="play"><v-icon color="white">mdi-play</v-icon></v-btn>
-        <v-btn v-else fab x-large color="#C4A29E" v-on:click="pause"><v-icon color="white">mdi-pause</v-icon></v-btn>
+    <div class="player-inner">
+      <div class="song-info">
+        <h1 class="band">Jamie XX</h1>
+        <p class="song-title" style="font-family: 'Rock 3D', cursive; font-size: 4em">Gosh</p>
+      </div>
+      <div class="audio">
+        <audio ref="source" crossorigin="anonymous" src="~@/assets/Jamie_xx_Gosh.mp3" v-on:ended="pause" v-on:loadedmetadata="init"></audio>
+        <div class="audio-wrapper">
+          <canvas ref="myCanvas" v-on:mousedown="mousedown" v-on:mouseup="mouseup" width="500" height="500"></canvas>
+          <div class="controls">
+            <v-btn v-if="paused" :disabled="!ready" fab x-large color="#C4A29E" v-on:click="play"><v-icon color="white">mdi-play</v-icon></v-btn>
+            <v-btn v-else fab x-large color="#C4A29E" v-on:click="pause"><v-icon color="white">mdi-pause</v-icon></v-btn>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -42,7 +50,7 @@ export default {
     url () { return this.$store.state.showcase.songUrl },
   },
   methods: {
-    main () {
+    init () {
       this.audioElement = this.$refs.source
       if (this.currentRun === 1) { // skip 0
         this.draw(this.audioData)
@@ -68,9 +76,6 @@ export default {
         this.start()
       }
       this.currentRun++
-    },
-    begin () {
-      this.main()
     },
     getPosition (el) {
       var xPos = 0
@@ -111,7 +116,7 @@ export default {
     play () {
       this.audioElement.play()
       this.paused = false
-      this.main()
+      this.init()
     },
     pause () {
       this.paused = true
@@ -298,11 +303,17 @@ export default {
 
 <style lang="scss" scoped>
 .player{
-  width: 100vw;
+  display: grid;
+  place-content: center;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .player-inner{
+    .song-info{
+
+    }
+    .audio{
+
+    }
+  }
 }
 .audio-wrapper {
   position: relative;
