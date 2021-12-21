@@ -9,6 +9,8 @@ The visualizer is drawn on an html canvas with it's
 values calculated from the byte frequency data of the
 song being played.
 
+The file of interest (where the magic happens!): src/components/Player.vue
+
 ## Project setup
 ```
 npm install
