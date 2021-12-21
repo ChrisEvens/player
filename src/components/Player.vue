@@ -44,10 +44,7 @@ export default {
     }
   },
   computed: {
-    radius () {
-      return this.size / 5
-    },
-    url () { return this.$store.state.showcase.songUrl },
+    radius () { return this.size / 5},
   },
   methods: {
     init () {
@@ -80,13 +77,11 @@ export default {
     getPosition (el) {
       var xPos = 0
       var yPos = 0
-
       while (el) {
         if (el.tagName === 'BODY') {
           // deal with browser quirks with body/window/document and page scroll
           var xScroll = el.scrollLeft || document.documentElement.scrollLeft
           var yScroll = el.scrollTop || document.documentElement.scrollTop
-
           xPos += (el.offsetLeft - xScroll + el.clientLeft)
           yPos += (el.offsetTop - yScroll + el.clientTop)
         } else {
@@ -94,7 +89,6 @@ export default {
           xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft)
           yPos += (el.offsetTop - el.scrollTop + el.clientTop)
         }
-
         el = el.offsetParent
       }
       return {
@@ -306,14 +300,6 @@ export default {
   display: grid;
   place-content: center;
   height: 100vh;
-  .player-inner{
-    .song-info{
-
-    }
-    .audio{
-
-    }
-  }
 }
 .audio-wrapper {
   position: relative;
