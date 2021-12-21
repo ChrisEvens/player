@@ -1,6 +1,6 @@
 # Audio Player
 
-A simple audio player built in vuejs by Chris Evens.
+A simple audio player 'proof of concept' built in Vue.js by Chris Evens.
 
 Demo:
 https://audioplayer-5f7f0.web.app/
